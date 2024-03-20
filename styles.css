@@ -1,0 +1,96 @@
+body {
+  background-color: #f3f5fc;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  max-height: 80vh;
+  min-height: 90vh;
+}
+
+main .logo {
+  width: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2em;
+}
+
+main .logo img {
+  width: 2em;
+}
+
+main .container {
+  border: transparent;
+  width: 50vw;
+  padding-top: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
+main .container .input-text {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+main .container .input-text textarea {
+  width: 100%;
+  height: 90%;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 0;
+  font-size: 2em;
+  font-weight: 350;
+  background: transparent;
+  color: #0a3871;
+}
+
+main .container .input-text textarea::placeholder {
+  color: #0a3871;
+}
+
+main .container .input-text textarea::focus {
+  outline: none;
+}
+
+main .container .alerta {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-top: 1em;
+}
+
+main .texto-encriptado {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.texto-encriptado .sin-texto {
+  background-color: #f3f5fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 75%;
+  border-radius: 2em;
+  box-shadow: 0 0 2em 0.2em #000000;
+}
+
+.sin-texto .sin-resultado {
+  color: #0a3871;
+  font-weight: 700;
+  flex-direction: column;
+  height: 90%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
