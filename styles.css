@@ -1,17 +1,14 @@
 body {
   background-color: #f3f5fc;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Inter", sans-serif;
 }
-
 .main {
   display: flex;
   flex-direction: row;
-  position: relative;
   max-height: 80vh;
+  position: relative;
   min-height: 90vh;
 }
-
 main .logo {
   width: 10vh;
   display: flex;
@@ -19,7 +16,6 @@ main .logo {
   align-items: flex-start;
   padding-top: 2em;
 }
-
 main .logo img {
   width: 2em;
 }
@@ -32,65 +28,325 @@ main .container {
   justify-content: center;
 }
 
-main .container .input-text {
+main .container .input_text {
   width: 70%;
   display: flex;
   flex-direction: column;
 }
-
-main .container .input-text textarea {
+main .container .input_text textarea {
   width: 100%;
   height: 90%;
-  border: none;
-  outline: none;
   resize: none;
-  padding: 0;
-  font-size: 2em;
-  font-weight: 350;
   background: transparent;
+  border: none;
   color: #0a3871;
+  font-weight: 400;
+  font-size: 2em;
+  padding: 0;
 }
-
-main .container .input-text textarea::placeholder {
+main .container .input_text textarea::placeholder {
   color: #0a3871;
+  opacity: 60%;
 }
-
-main .container .input-text textarea::focus {
+main .container .input_text textarea:focus {
   outline: none;
 }
-
-main .container .alerta {
+main .container .bottom {
   display: flex;
   flex-direction: column;
   gap: 1em;
   padding-top: 1em;
 }
-
-main .texto-encriptado {
+main .output_text {
   width: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3em;
 }
-
-.texto-encriptado .sin-texto {
-  background-color: #f3f5fc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.output_text .result {
+  background-color: #ffff;
   height: 80vh;
   width: 75%;
   border-radius: 2em;
-  box-shadow: 0 0 2em 0.2em #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0em 0em 2em 0.1em #00000031;
 }
-
-.sin-texto .sin-resultado {
+.result .no_output {
   color: #0a3871;
   font-weight: 700;
-  flex-direction: column;
-  height: 90%;
   text-align: center;
+  height: 90%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.result .result_output {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.result .result_output button {
+  margin-bottom: 2em;
+}
+.result .result_output .output_text_decrypt {
+  height: 100%;
+  width: 100%;
+  margin-top: 1em;
+  resize: none;
+  background: transparent;
+  border: none;
+  color: #0a3871;
+  font-weight: 400;
+  font-size: 2em;
+}
+.result .result_output .output_text_decrypt:focus {
+  outline: none;
+}
+
+.result .no_output img {
+  width: 100%;
+}
+main .result .no_output,
+main .result .result_output {
+  padding: 2em;
+}
+
+/* style de los botones */
+main .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+main .button {
+  padding: 1em;
+  width: 100%;
+  border-radius: 1em;
+  border: none;
+  border: 2px solid #0a3871;
+  transition: border-color 250ms, background-color 250ms;
+}
+main .button:hover,
+.footer-distributed .button_enviar:hover {
+  cursor: pointer;
+}
+main .button.button_encrypt {
+  background: #0a3871;
+  color: white;
+  font-weight: 500;
+}
+main .button.button_encrypt:hover {
+  background-color: #4576b1;
+  border-color: #4576b1;
+}
+main .button.button_decrypt {
+  background: transparent;
+  color: #0a3871;
+  font-weight: 500;
+}
+main .button.button_decrypt:hover {
+  background-color: #dde2e8;
+}
+main .bottom small {
+  color: #495057;
+  font-weight: 500;
+  display: flex;
+  align-items: end;
+}
+main .bottom small img {
+  padding-right: 0.25em;
+}
+
+/* Cambio salida entre muneco y texto */
+.result.no_texto .result_output {
+  display: none;
+}
+.result:not(.no_texto) .result_output {
+  display: flex;
+}
+
+.result.no_texto .no_output {
+  display: flex;
+}
+.result:not(.no_texto) .no_output {
+  display: none;
+}
+
+/* footer style */
+.footer-distributed {
+  background: #0a3871;
+  box-shadow: 0em 0em 2em 0.1em #00000031;
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  text-align: left;
+  margin-top: 2vh;
+  padding: 1em 4em 0.5em;
+  overflow: hidden;
+  color: white;
+}
+
+.footer-distributed h3 {
+  font-size: 30px;
+}
+
+.footer-distributed p {
+  font-size: 15px;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 60vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Estilos para el alert */
+#custom-alert {
+  width: 300px;
+  position: fixed;
+  top: 10vh;
+  left: 40vw;
+  right: 10vw;
+  background-color: #ecffe1;
+  color: #2c2286;
+  font-size: 15px;
+  padding: 10px;
+  border: 2px solid #0d01bd;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bolder;
+  display: none;
+}
+
+/*Responsivo*/
+@media screen and (max-width: 1400px) {
+  main .container {
+    width: 50vw;
+  }
+  main .result {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .main {
+    flex-direction: column;
+    max-height: inherit;
+  }
+  .main .logo,
+  .main .container,
+  .main .output_text {
+    width: 100%;
+  }
+  .main .logo {
+    justify-content: flex-start;
+  }
+  main .logo img {
+    padding-left: 2em;
+  }
+  main .container {
+    padding-top: 5vh;
+  }
+  main .container .input_text {
+    width: 100%;
+    padding: 2em;
+  }
+  main .container .input_text textarea {
+    height: 50vh;
+    width: 90%;
+  }
+  main .output_text {
+    margin: 0;
+  }
+  main .output_text .result {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+    height: auto;
+    overflow: hidden;
+  }
+  main .result .result_output .result_decrypt {
+    overflow-y: auto;
+    max-height: 25vh;
+    margin: 2.5em;
+  }
+  main .result .no_output img {
+    display: none;
+  }
+  main .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .footer-distributed {
+    font: bold 12px sans-serif;
+    padding: 1em 2.5em 0.5em;
+  }
+
+
+@media screen and (max-width: 767px) {
+  .main {
+    flex-direction: column;
+    max-height: inherit;
+  }
+  .main .logo,
+  .main .container,
+  .main .result {
+    width: 100%;
+  }
+  .main .logo {
+    justify-content: flex-start;
+  }
+  main .logo {
+    width: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 1em;
+  }
+  .main .logo img {
+    padding-left: 2em;
+  }
+  .main .container {
+    padding-top: 2vh;
+  }
+  .main .container .input_text {
+    width: 100%;
+    padding: 1em 2em 1em;
+  }
+  .main .container .input_text textarea {
+    height: 20vh;
+  }
+  .main .result .result {
+    width: 100%;
+    margin: 2em;
+    height: auto;
+    overflow: hidden;
+  }
+  .main .result .result .result_output .result_decrypt {
+    overflow-y: auto;
+    max-height: 30vh;
+    margin: 2.5em;
+  }
+  .main .result .result .result_output {
+    font-weight: 400;
+    padding: 1em;
+    height: 70%;
+  }
+  main .result .no_output img {
+    display: none;
+  }
+  main .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }

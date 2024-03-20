@@ -1,63 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="styles.css" />
+    <title>Desafío Encriptador</title>
   </head>
+
   <body>
     <main class="main">
       <div class="logo">
-        <img src="img/logo.png" alt="logo" />
+        <img src="img/Logo.png" alt="logo" />
       </div>
       <div class="container">
-        <div class="input-text">
+        <div class="input_text">
           <textarea
-            class="entrada-encriptar"
-            id="entrada-encriptar"
-            placeholder="Ingresa aquí el texto a encriptar"
+            class="input_text_encrypt"
+            id="input_text_encrypt"
+            placeholder="Escribe aquí"
           ></textarea>
-          <div class="alerta">
-            <p>
-              <img src="img/icon.png" />Solo letras minusculas y sin acentos
-            </p>
+          <div class="bottom">
+            <small
+              ><img src="./img/icon.png" /> solo minusculas sin acentos</small
+            >
             <div class="buttons">
-              <button class="boton-encriptar" id="boton-encriptar">
+              <button class="button button_encrypt" id="button_encrypt">
                 Encriptar
               </button>
-              <button class="boton-desencriptar" id="boton-desencriptar">
+              <button class="button button_decrypt" id="button_decrypt">
                 Desencriptar
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div class="texto-encriptado" id="texto-encriptado">
-        <div class="sin-texto">
-          <div class="sin-resultado">
-            <img id="muneco" src="img/Muneco.png" alt="muneco"/s>
-            <h2>Ningún mensaje fue encontrado</h2>
-            <p>Ingresa el texto que quieres encriptar o desenriptar</p>
+      <div class="output_text" id="output_text">
+        <div class="result no_texto">
+          <div class="no_output">
+            <img id="Muneco" class="" src="img/Muneco.png" alt="muneco" />
+            <h2>¡No hay mensajes!</h2>
+            <p>Ingresa el texto para encriptar o desencriptar</p>
           </div>
-          <div class="resultado">
+          <div class="result_output">
             <textarea
-              class="resultado-encriptado"
-              id="resultado-encriptado"
+              class="output_text_decrypt"
+              id="output_text_decrypt"
             ></textarea>
-            <button class="boton-copiar" id="boton-copiar">Copiar</button>
+            <button
+              class="button button_decrypt button_copiar"
+              id="button_copiar"
+            >
+              Copiar
+            </button>
           </div>
         </div>
       </div>
     </main>
-    <footer class="mis-datos">
-      <div class="datos-left">
-        <h3>Desafío encriptador</h3>
-        <p class="desarrollador">
-          © Dennis Maguiña Cutipa 2024 - Desafío encriptador
+    <footer class="footer-distributed">
+      <div class="footer">
+        <h3>Desafío Encriptador</h3>
+        <p class="footer-company-name">
+          © Dennis Maguiña Cutipa 2024 - Desafío Encriptador - Alura
         </p>
       </div>
+
+      <div class="footer-right"></div>
     </footer>
-    <div id="mensaje-alerta"></div>
+
     <script src="script.js"></script>
+
+    <div id="custom-alert"></div>
   </body>
 </html>
