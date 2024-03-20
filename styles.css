@@ -44,13 +44,16 @@ main .container .input_text textarea {
   font-size: 2em;
   padding: 0;
 }
+
 main .container .input_text textarea::placeholder {
   color: #0a3871;
   opacity: 60%;
 }
+
 main .container .input_text textarea:focus {
   outline: none;
 }
+
 main .container .bottom {
   display: flex;
   flex-direction: column;
